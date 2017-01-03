@@ -1,0 +1,29 @@
+=transitions($params)
+  @if length($params) < 2
+    $params: all .3s
+
+  -webkit-transition: $params
+  -moz-transition: $params
+  -ms-transition: $params
+  -o-transition: $params
+  transition: $params
+
+.text
+  &--italic
+    font-style: italic
+  &--light
+    font-weight: 300
+  &--bold
+    font-weight: 600
+  &--uppercase
+    text-transform: uppercase
+  &--center
+    text-align: center
+  &--smaller
+    font-size: 1.6rem
+
+.centerBoth
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
