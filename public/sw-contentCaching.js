@@ -1,5 +1,5 @@
 var OFFLINE_URL = '/public/offlinePage.html';
-// helper regex that checks if response.status is ok
+// helper regex that matches success response.status
 var successResponses = /^0|([123]\d\d)|(40[14567])|410$/;
 toolbox.precache([OFFLINE_URL]);
 
