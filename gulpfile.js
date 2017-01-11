@@ -96,7 +96,7 @@ gulp.task('sass', function(){
 
 
 gulp.task('js',function(){
- return gulp.src(['public/js/vendor/**/*.js','public/js/scripts/**/*.js'])
+ return gulp.src(['public/js/vendor/**/*.js','public/js/scripts/**/*.js',,'public/js/*.js'])
      .pipe(sourcemaps.init())
      .pipe(concat('all.js'))
      .pipe(sourcemaps.write())
