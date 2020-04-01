@@ -1,23 +1,25 @@
 {
-  "name": "Boilerplate",
-  "version": "0.1.0",
+  "name": "gulp-publisher",
+  "version": "2.0.0",
+  "description": "1. install node.js 2. install npm 3. install gulp globally if U haven't already - 'npm install --global gulp-cli' 4. run 'npm install' in project folder",
+  "main": "gulpfile.js",
+  "dependencies": {},
   "devDependencies": {
-    "gulp": "*",
-    "gulp-autoprefixer": "*",
-    "gulp-concat": "*",
-    "gulp-cssmin": "*",
-    "gulp-import-css": "*",
-    "gulp-inject": "*",
-    "gulp-replace": "*",
-    "gulp-sass": "*",
-    "gulp-sourcemaps": "*",
-    "gulp-uglify": "*",
-    "gulp-watch": "*",
-    "node-sass": "*",
-    "sw-precache": "*",
-    "sw-toolbox": "*"
-  },
-  "dependencies": {
-
+    "@babel/core": "^7.9.0",
+    "@babel/polyfill": "^7.8.7",
+    "@babel/preset-env": "^7.9.0",
+    "autoprefixer": "^9.7.5",
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "cssnano": "^4.1.10",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2"
   }
 }
