@@ -17,6 +17,7 @@ const config = {
       './public/js/scripts/*.js'
     ],
     sass: './public/css/**/*.sass',
+    css: './public/css/**/*.css',
     htmlFile: './views/base.html.twig'
   },
   dist: {
@@ -50,9 +51,11 @@ function jsBuild(done) {
 }
 
 function cssBuild(done) {
-  src(config.app.sass)
-    .pipe(concat('bundle.sass'))
+  src(config.app.css)
+    .pipe(concat('bundle.css'))
+    .pipe(src(config.app.sass))
     .pipe(sass({ outputStyle: 'expanded' }))
+    .pipe(concat('bundle.css'))
     .pipe(postcss([autoprefixer(), cssnano()]))
     .pipe(rename({ suffix: '.' + hashCode }))
     .pipe(dest(config.dist.base))
@@ -60,9 +63,11 @@ function cssBuild(done) {
 }
 
 function cssDev(done) {
-  src(config.app.sass, { sourcemaps: true })
-    .pipe(concat('bundle.dev.sass'))
+  src(config.app.css, { sourcemaps: true })
+    .pipe(concat('bundle.dev.css'))
+    .pipe(src(config.app.sass, { sourcemaps: true }))
     .pipe(sass({ outputStyle: 'expanded' }))
+    .pipe(concat('bundle.dev.css'))
     .pipe(dest(config.dist.base, { sourcemaps: true }))
   done();
 }
@@ -84,6 +89,7 @@ function setDevHash(done) {
 function watchFiles() {
   watch(config.app.js, jsDev);
   watch(config.app.sass, cssDev);
+  watch(config.app.css, cssDev);
 }
 
 function cleanUp() {
